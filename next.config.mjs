@@ -7,7 +7,13 @@ const nextConfig = {
                 hostname: 'res.cloudinary.com'
             }
         ],
-    }
+    },
+    sassOptions: {
+        silenceDeprecations: ["legacy-js-api"],
+    },
+    turbopack: {
+        root: ".",
+    },
 };
 
 export default nextConfig;

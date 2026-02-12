@@ -10,21 +10,21 @@
         font-size: 28px;
     }
 
+    .swiper-pagination-bullet {
+        transition: all .3s ease-in-out;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: v.$color-3;
+        width: 24px;
+        border-radius: 200px;
+        transition: all .3s ease-in-out;
+    }
+
     swiper-container {
         margin: 30px 0%;
-
-        &::part(bullet) {
-            transition: all .3s ease-in-out;
-        }
-
-        &::part(bullet-active) {
-            background-color: v.$color-3;
-            width: 24px;
-            border-radius: 200px;
-            transition: all .3s ease-in-out;
-        }        
     }
-    
+
     swiper-slide {
         display: flex;
         align-items: center;
@@ -32,7 +32,7 @@
     }
 
     article {
-        *background-color: v.$color-2;
+        /*background-color: v.$color-2;*/
         margin: 30px 0;
         border-radius: 7px;
         width: 95%;
@@ -59,7 +59,7 @@
                 font-weight: 600;
                 min-height: 4rem;
             }
-    
+
             p {
                 font-size: calc(15px + 0.2vw);
                 margin: 0;
@@ -99,8 +99,8 @@
         }
     }
 
-    swiper-container::part(button-prev),
-    swiper-container::part(button-next) {
+    .swiper-button-prev,
+    .swiper-button-next {
         background-color: rgb(0, 0, 0, 0.8);
         color: #ffffff;
         height: 100%;
@@ -109,12 +109,27 @@
         font-size: 10px;
     }
 
-    swiper-container::part(button-prev) {
+    .swiper-horizontal .swiper-button-prev,
+    .swiper-horizontal~.swiper-button-prev,
+    .swiper-horizontal.swiper-rtl .swiper-button-next,
+    .swiper-horizontal.swiper-rtl~.swiper-button-next {
         left: 0;
+        right: auto;
     }
 
-    swiper-container::part(button-next) {
+    .swiper-horizontal .swiper-button-next,
+    .swiper-horizontal~.swiper-button-next,
+    .swiper-horizontal.swiper-rtl .swiper-button-prev,
+    .swiper-horizontal.swiper-rtl~.swiper-button-prev {
         right: 0;
+        left: auto;
+    }
+
+    .swiper-horizontal .swiper-button-prev,
+    .swiper-horizontal .swiper-button-next,
+    .swiper-horizontal~.swiper-button-prev,
+    .swiper-horizontal~.swiper-button-next {
+        top: 0;
     }
 }
 

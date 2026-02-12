@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import { Car } from "@/types";
 import { apiUrl } from "@/utils/globalVariables";
 
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 //import "@/styles/globals/_typography.scss"; //import separately in "layout.tsx";
 import "./globals.scss";
 import "../styles/index.scss";

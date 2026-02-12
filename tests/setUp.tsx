@@ -1,4 +1,5 @@
 import React, { PropsWithChildren } from 'react';
+import type { JSX } from 'react';
 import { Provider } from 'react-redux';
 import { render } from '@testing-library/react';
 import type { RenderOptions } from '@testing-library/react';
