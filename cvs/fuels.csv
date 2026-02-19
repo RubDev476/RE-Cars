@@ -1,0 +1,11 @@
+fuel_id,type
+1,Gasoline
+2,Diesel
+3,Electric
+4,Hybrid
+5,Plug-in Hybrid
+6,Hydrogen
+7,Ethanol (Flex Fuel)
+8,Compressed Natural Gas (CNG)
+9,Liquefied Petroleum Gas (LPG)
+10,Biodiesel
