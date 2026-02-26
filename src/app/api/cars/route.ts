@@ -7,9 +7,11 @@ import { orderF } from "@/store/utilities";
 import type { Car, MainKeyQueryParams } from "@/types";
 //import { NextResponse } from "next/server";
 
+import { dbConnection } from "@/db/db";
+
 export const revalidate = 60;
 
-export async function GET(request: NextRequest) {
+/*export async function GET(request: NextRequest) {
     const searchParams = request.nextUrl.searchParams;
 
     if (searchParams.toString() === '') return Response.json({ cars: CARS_DB });
@@ -50,4 +52,9 @@ export async function GET(request: NextRequest) {
     if (order) allFilters = orderF(allFilters, order);
 
     return Response.json({ cars: allFilters });
+}*/
+
+export async function GET() {
+  const [rows] = await dbConnection.query('SELECT * FROM cars');
+  return Response.json(rows);
 }

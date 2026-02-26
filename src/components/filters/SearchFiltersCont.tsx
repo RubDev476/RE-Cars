@@ -13,11 +13,33 @@ import { useCarsSelectors } from "@/hooks/useCarsSelectors";
 import { optionsType, optionsKey } from "@/utils/globalVariables";
 
 import { Skeleton, Searcher } from '@/components';
+import { useEffect, useState } from "react";
 
 export default function SearchFiltersCont({ openMenu, currentOption, setCurrentOption }: SearchFiltersProps) {
+    const [brands, setBrands] = useState<any[]>([]);
+
     const pathname = usePathname();
 
     const { fetchStatus, filterOptions } = useCarsSelectors();
+
+    useEffect(() => {
+        getBrands();
+        console.log('jhjhjhj')
+    }, [])
+
+    async function getBrands() {
+        try {
+            //if (!apiUrl) return undefined;
+
+            const data = await fetch('http://localhost:3000/api/brands').then(res => res.json());
+
+            setBrands(data);
+
+            return data;
+        } catch (error) {
+            return undefined;
+        }
+    }
 
     return (
         <div className={`search-filters-container ${pathname !== '/' ? 'none' : 'items-between'}`} >
@@ -36,7 +58,7 @@ export default function SearchFiltersCont({ openMenu, currentOption, setCurrentO
                     </>
                 )}
 
-                {fetchStatus === 'completed' && (
+                {/*fetchStatus === 'completed' && (
                     <>
                         <p className="color-4">Filtrar por:</p>
                         
@@ -51,7 +73,22 @@ export default function SearchFiltersCont({ openMenu, currentOption, setCurrentO
                             </button>
                         ))}
                     </>
-                )}
+                )*/}
+
+                {<>
+                        <p className="color-4">Filtrar por:</p>
+                        
+                        {optionsType.map((option: string) => (
+                            <button
+                                className={`btn-filter ${'test-' + option} capitalize pointer ${currentOption === option ? 'color-1' : 'color-4'}`}
+                                onClick={() => currentOption === option ? setCurrentOption('') : setCurrentOption(option)}
+                                key={option}
+                            >
+                                {option}
+                                <FontAwesomeIcon icon={faAngleRight} className='icon-filter color-1 icon-mobile' /> <FontAwesomeIcon icon={currentOption === option ? faAngleUp : faAngleDown} className='color-1 icon-pc icon-filter' />
+                            </button>
+                        ))}
+                    </>}
             </div>
 
             <div className={`options-container ${currentOption !== '' ? 'block' : 'none'} ${currentOption}`}>
@@ -68,9 +105,15 @@ export default function SearchFiltersCont({ openMenu, currentOption, setCurrentO
                 )}
 
                 <div className="options p-family">
-                    {currentOption === optionsKey.keyBrand && (
+                    {/*currentOption === optionsKey.keyBrand && (
                         filterOptions.brands.map((brand) => (
                             <Link href={`/seminuevos?brand=${brand.toLowerCase().replace(' ', '+')}`} key={brand}>{brand}</Link>
+                        ))
+                    )*/}
+
+                    {currentOption === optionsKey.keyBrand && (
+                        brands.map((brand) => (
+                            <Link href={`/seminuevos?brand=${brand.name.toLowerCase().replace(' ', '+')}`} key={brand.brand_id}>{brand.name}</Link>
                         ))
                     )}
 
