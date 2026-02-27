@@ -34,12 +34,29 @@ export default function Header({ data }: { data: { cars: Car[] } | undefined }) 
     const { getFilterOptionsAction, setKeywordsParamsAction, setCarsStatusAction } = useCarsActions();
 
     useEffect(() => {
-        getFilterOptionsAction(data?.cars);
+        //getFilterOptionsAction(data?.cars);
+        getFilters();
 
         addEventListener('resize', () => {
             if (window.innerWidth >= 1024) resetMenuMobile();
         })
     }, [])
+
+    async function getFilters() {
+        try {
+            //if (!apiUrl) return undefined;
+
+            const data = await fetch('http://localhost:3000/api/searchFilters').then(res => res.json());
+
+            console.log(data)
+
+            getFilterOptionsAction(data);
+
+            //return data;
+        } catch (error) {
+            return undefined;
+        }
+    }
 
     useEffect(() => {
         resetMenuMobile();

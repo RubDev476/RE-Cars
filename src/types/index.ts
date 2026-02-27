@@ -20,12 +20,17 @@ export type TagParam = {
     value: string;
 }
 
+type brand = {
+    brand_id: number,
+    name: string
+}
+
 export type FilterOptions = {
-    brands: string[];
-    years: number[];
-    doors: number[];
-    colors: string[];
-    transmissions: string[];
+    brands: brand[];
+    years: any;
+    doors: any;
+    //colors: string[];
+    transmissions: any;
 }
 
 type Options<T> = {

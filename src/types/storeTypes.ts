@@ -14,6 +14,7 @@ export type UIFilterPayload = {
 export type InitialState = {
     cars: Car[];
     filtersOptions: FilterOptions;
+    //filtersOptions: any;
     fetchStatus: FetchStatus;
     keywordsParams: string;
     UIFilters: Record<UIFilterOptions, UIFilterValues>;

@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-import type { Car } from '@/types';
+import type { Car, FilterOptions } from '@/types';
 import type { InitialState, FetchStatus, UIFilterPayload, CarsStatus } from '@/types/storeTypes';
 
 import { extractData } from '../utilities';
@@ -12,7 +12,7 @@ export const initialState: InitialState = {
         brands: [],
         doors: [],
         transmissions: [],
-        colors: [],
+        //colors: [],
         years: []
     },
     fetchStatus: 'loading',
@@ -30,16 +30,21 @@ export const carsSlice = createSlice({
     name: 'cars',
     initialState,
     reducers: {
-        getFilterOptions: (state, action: PayloadAction<Car[] | undefined>) => {
+        getFilterOptions: (state, action: PayloadAction<FilterOptions>) => {
+            console.log(action.payload)
+
             if(!action.payload) {
                 state.fetchStatus = 'error';
 
                 return;
             }
 
-            const filterOptions = extractData(action.payload);
+            console.log('succes...')
 
-            state.filtersOptions =  filterOptions;
+            //const filterOptions = extractData(action.payload);
+
+            //state.filtersOptions =  filterOptions;
+            state.filtersOptions = action.payload;
             state.fetchStatus = 'completed';
         },
         setFetchStatus: (state, action: PayloadAction<FetchStatus>) => {

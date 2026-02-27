@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import type { AppDispatch } from "@/store";
 
 import { getCars, getFilterOptions, setFetchStatus, setKeywordsParams, setUIFilters, setCarsStatus } from "@/store/cars/cars.slice";
-import type { Car } from "@/types";
+import type { Car, FilterOptions } from "@/types";
 import type { CarsStatus, FetchStatus, UIFilterPayload } from "@/types/storeTypes";
 
 export const useCarsActions = () => {
@@ -10,7 +10,8 @@ export const useCarsActions = () => {
     const dispatch = useAppDispatch();
 
     const getCarsAction = (cars: Car[] | undefined) => dispatch(getCars(cars));
-    const getFilterOptionsAction = (cars: Car[] | undefined) => dispatch(getFilterOptions(cars));
+    //const getFilterOptionsAction = (cars: Car[] | undefined) => dispatch(getFilterOptions(cars));
+    const getFilterOptionsAction = (filters: FilterOptions) => dispatch(getFilterOptions(filters));
     const setFetchStatusAction = (status: FetchStatus) => dispatch(setFetchStatus(status));
     const setKeywordsParamsAction = (params: string) => dispatch(setKeywordsParams(params));
     const setUIFiltersAction = (filterOption: UIFilterPayload) => dispatch(setUIFilters(filterOption));

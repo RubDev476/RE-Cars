@@ -23,11 +23,11 @@ export default function SearchFiltersCont({ openMenu, currentOption, setCurrentO
     const { fetchStatus, filterOptions } = useCarsSelectors();
 
     useEffect(() => {
-        getBrands();
-        console.log('jhjhjhj')
-    }, [])
+        console.log(fetchStatus)
+        console.log(filterOptions)
+    }, [fetchStatus, filterOptions])
 
-    async function getBrands() {
+    /*async function getBrands() {
         try {
             //if (!apiUrl) return undefined;
 
@@ -39,7 +39,7 @@ export default function SearchFiltersCont({ openMenu, currentOption, setCurrentO
         } catch (error) {
             return undefined;
         }
-    }
+    }*/
 
     return (
         <div className={`search-filters-container ${pathname !== '/' ? 'none' : 'items-between'}`} >
@@ -58,7 +58,7 @@ export default function SearchFiltersCont({ openMenu, currentOption, setCurrentO
                     </>
                 )}
 
-                {/*fetchStatus === 'completed' && (
+                {fetchStatus === 'completed' && (
                     <>
                         <p className="color-4">Filtrar por:</p>
                         
@@ -73,22 +73,7 @@ export default function SearchFiltersCont({ openMenu, currentOption, setCurrentO
                             </button>
                         ))}
                     </>
-                )*/}
-
-                {<>
-                        <p className="color-4">Filtrar por:</p>
-                        
-                        {optionsType.map((option: string) => (
-                            <button
-                                className={`btn-filter ${'test-' + option} capitalize pointer ${currentOption === option ? 'color-1' : 'color-4'}`}
-                                onClick={() => currentOption === option ? setCurrentOption('') : setCurrentOption(option)}
-                                key={option}
-                            >
-                                {option}
-                                <FontAwesomeIcon icon={faAngleRight} className='icon-filter color-1 icon-mobile' /> <FontAwesomeIcon icon={currentOption === option ? faAngleUp : faAngleDown} className='color-1 icon-pc icon-filter' />
-                            </button>
-                        ))}
-                    </>}
+                )}
             </div>
 
             <div className={`options-container ${currentOption !== '' ? 'block' : 'none'} ${currentOption}`}>
@@ -112,25 +97,25 @@ export default function SearchFiltersCont({ openMenu, currentOption, setCurrentO
                     )*/}
 
                     {currentOption === optionsKey.keyBrand && (
-                        brands.map((brand) => (
+                         filterOptions.brands.map((brand) => (
                             <Link href={`/seminuevos?brand=${brand.name.toLowerCase().replace(' ', '+')}`} key={brand.brand_id}>{brand.name}</Link>
                         ))
                     )}
 
                     {currentOption === optionsKey.keyYear && (
-                        filterOptions.years.map((year) => (
+                        filterOptions.years.map((year: any) => (
                             <Link href={`/seminuevos?year=${year.toString()}`} key={year}>{year}</Link>
                         ))
                     )}
 
                     {currentOption === optionsKey.keyDoors && (
-                        filterOptions.doors.map((door) => (
+                        filterOptions.doors.map((door: any) => (
                             <Link href={`/seminuevos?doors=${door.toString()}`} key={door}>{door}</Link>
                         ))
                     )}
 
                     {currentOption === optionsKey.keyTransmission && (
-                        filterOptions.transmissions.map((transmission) => (
+                        filterOptions.transmissions.map((transmission: any) => (
                             <Link href={`/seminuevos?transmission=${transmission.toLowerCase()}`} className="capitalize" key={transmission}>{transmission}</Link>
                         ))
                     )}
