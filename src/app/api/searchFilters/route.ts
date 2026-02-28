@@ -2,20 +2,6 @@ import { dbConnection } from "@/db/db";
 
 export const revalidate = 60;
 
-/*export async function GET() {
-    const [brands] = await dbConnection.query('SELECT * FROM brands order by name');
-    const [years] = await dbConnection.query('SELECT * FROM getYears order by year');
-    const [doors] = await dbConnection.query('SELECT * FROM getDoors order by doors');
-    const [transmissions] = await dbConnection.query('SELECT * FROM transmissions order by type');
-
-    return Response.json({
-        brands,
-        years,
-        doors,
-        transmissions
-    });
-}*/
-
 export async function GET() {
     const queries = [
         dbConnection.query("SELECT * FROM brands ORDER BY name"),

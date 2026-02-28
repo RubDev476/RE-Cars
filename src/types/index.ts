@@ -25,23 +25,40 @@ type brand = {
     name: string
 }
 
-export type FilterOptions = {
-    brands: brand[];
-    years: any;
-    doors: any;
-    //colors: string[];
-    transmissions: any;
+type year = {
+    id: number,
+    year: number
 }
 
-type Options<T> = {
+type door = {
+    id: number,
+    doors: number
+}
+
+type transmission = {
+    transmission_id: number,
+    type: string
+}
+
+export type FilterOptions = {
+    brands: brand[];
+    years: year[];
+    doors: door[];
+    //colors: string[];
+    transmissions: transmission[];
+}
+
+//type Options<T> = {
+type Options = {
     bool: boolean;
     set: Dispatch<SetStateAction<boolean>>;
     keyUI: string;
-    options: T[];
+    options: brand[] | year[] | door[] | transmission[];
 }
 
 export type AccordionOptions = {
-    [keyAccordion: string]: Options<string | number>;
+    //[keyAccordion: string]: Options<string | number>;
+    [keyAccordion: string]: Options;
 }
 
 export type ModalProps = {

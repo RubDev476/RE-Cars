@@ -4,8 +4,6 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Car, FilterOptions } from '@/types';
 import type { InitialState, FetchStatus, UIFilterPayload, CarsStatus } from '@/types/storeTypes';
 
-import { extractData } from '../utilities';
-
 export const initialState: InitialState = {
     cars: [],
     filtersOptions: {
@@ -39,11 +37,6 @@ export const carsSlice = createSlice({
                 return;
             }
 
-            console.log('succes...')
-
-            //const filterOptions = extractData(action.payload);
-
-            //state.filtersOptions =  filterOptions;
             state.filtersOptions = action.payload;
             state.fetchStatus = 'completed';
         },

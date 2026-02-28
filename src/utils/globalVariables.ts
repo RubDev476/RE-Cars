@@ -32,10 +32,22 @@ export const socialIcons = ['facebook', 'instagram', 'youtube', 'twitter', 'pint
 
 //searchfilterscont component
 export const optionsKey = {
-    keyBrand: 'marca',
-    keyYear: 'año',
-    keyDoors: 'puertas',
-    keyTransmission: 'transmision'
+    keyBrand: {
+        engName: 'brands',
+        spaName: 'marca'
+    },
+    keyYear: {
+        engName: 'years',
+        spaName: 'año'
+    },
+    keyDoors: {
+        engName: 'doors',
+        spaName: 'puertas'
+    },
+    keyTransmission: {
+        engName: 'transmissions',
+        spaName: 'transmision'
+    }
 }
 
-export const optionsType: string[] = Object.values(optionsKey);
+export const optionsType = Object.values(optionsKey);

@@ -1,0 +1,14 @@
+components:
+    *searchFiltersCont: 
+        -Si una opcion de filtro no se muestra, se descuadra el dropdown de lugar
+        -en modo responsive no hay el scroll en brands y years
+    *modalfilters:
+        -mejorar de forma dinamica las opciones de filtros
+
+redux:
+    - si un fecth falla, vuelve a status error y no muestra lo que ya habia cargado previamente
+    - aislar cada componente de servidor para no depender de un status fetch global
+
+tests:
+    - modalfilters - solo se ha probado con brands
+    - searchFiltersCont - modificado, pero queda pendiente colors

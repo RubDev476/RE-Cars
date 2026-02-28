@@ -73,11 +73,47 @@ describe('first load / fetchStatus === "completed" / pathname === "/"', () => {
                     ...initialState,
                     fetchStatus: 'completed',
                     filtersOptions: {
-                        brands: ['chevrolet', 'audi'],
-                        years: [2024, 2023],
-                        doors: [2, 4],
-                        colors: ['black', 'blue'],
-                        transmissions: ['manual', 'automatico']
+                        brands: [
+                            {
+                                brand_id: 1,
+                                name: 'chevrolet'
+                            },
+                            {
+                                brand_id: 2,
+                                name: 'audi'
+                            }
+                        ],
+                        years: [
+                            {
+                                id: 1,
+                                year: 2020
+                            },
+                            {
+                                id: 1,
+                                year: 2021
+                            }
+                        ],
+                        doors: [
+                            {
+                                id: 1,
+                                doors: 2
+                            },
+                            {
+                                id: 1,
+                                doors: 2
+                            }
+                        ],
+                        //colors: ['black', 'blue'],
+                        transmissions: [
+                            {
+                                transmission_id: 1,
+                                type: 'manual'
+                            },
+                            {
+                                transmission_id: 2,
+                                type: 'automatico'
+                            }
+                        ]
                     }
                 }
             }

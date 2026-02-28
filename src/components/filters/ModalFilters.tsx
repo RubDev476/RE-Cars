@@ -64,7 +64,7 @@ export default function ModalFilters({ createURL, params, tagsParams }: ModalPro
                 </div>
 
                 <div className="filters p-family">
-                    {mainKeyQueryParams.map(key => {
+                    {/*mainKeyQueryParams.map(key => {
                         const obj: AccordionOptions = {
                             brand: {
                                 bool: brandAccor,
@@ -122,7 +122,30 @@ export default function ModalFilters({ createURL, params, tagsParams }: ModalPro
                                 )}
                             </div>
                         )
-                    })}
+                    })*/}
+
+                    {<div className={`accordion-container ${`test-` + 'brand'} border-bottom`} key={'brand'}>
+                        <button
+                            className={`btn-action ${`test-` + 'brand'} pointer ${brandAccor ? 'color-1' : 'color-4'}`}
+                            onClick={() => setBrand(!brandAccor)}
+                        >
+                            {'Marcas'} <FontAwesomeIcon icon={brandAccor ? faAngleUp : faAngleDown} className="icon-filter" />
+                        </button>
+
+                        {brandAccor && (
+                            <div className="options">
+                                {filterOptions.brands.map(option => (
+                                    <button
+                                        className={`capitalize ${getClass('brand', option.name.toString().toLowerCase())}`}
+                                        key={option.brand_id}
+                                        onClick={(e: React.MouseEvent<HTMLButtonElement>) => btnCreateQuery(e, 'brand')}
+                                    >
+                                        {option.name.toString()}
+                                    </button>
+                                ))}
+                            </div>
+                        )}
+                    </div>}
                 </div>
 
                 <button
