@@ -20,32 +20,17 @@ export type TagParam = {
     value: string;
 }
 
-type brand = {
-    brand_id: number,
-    name: string
-}
-
-type year = {
+type FilterOptionsItems = {
     id: number,
-    year: number
-}
-
-type door = {
-    id: number,
-    doors: number
-}
-
-type transmission = {
-    transmission_id: number,
-    type: string
+    value: string | number
 }
 
 export type FilterOptions = {
-    brands: brand[];
-    years: year[];
-    doors: door[];
-    //colors: string[];
-    transmissions: transmission[];
+    brands: FilterOptionsItems[];
+    years: FilterOptionsItems[];
+    doors: FilterOptionsItems[];
+    colors: FilterOptionsItems[];
+    transmissions: FilterOptionsItems[];
 }
 
 //type Options<T> = {
@@ -53,7 +38,7 @@ type Options = {
     bool: boolean;
     set: Dispatch<SetStateAction<boolean>>;
     keyUI: string;
-    options: brand[] | year[] | door[] | transmission[];
+    options: FilterOptionsItems[];
 }
 
 export type AccordionOptions = {

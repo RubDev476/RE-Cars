@@ -34,7 +34,6 @@ export default function Header({ data }: { data: { cars: Car[] } | undefined }) 
     const { getFilterOptionsAction, setKeywordsParamsAction, setCarsStatusAction } = useCarsActions();
 
     useEffect(() => {
-        //getFilterOptionsAction(data?.cars);
         getFilters();
 
         addEventListener('resize', () => {
@@ -48,11 +47,7 @@ export default function Header({ data }: { data: { cars: Car[] } | undefined }) 
 
             const data = await fetch('http://localhost:3000/api/searchFilters').then(res => res.json());
 
-            console.log(data)
-
             getFilterOptionsAction(data);
-
-            //return data;
         } catch (error) {
             return undefined;
         }

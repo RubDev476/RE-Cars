@@ -76,25 +76,25 @@ export default function SearchFiltersCont({ openMenu, currentOption, setCurrentO
                 <div className="options p-family">
                     {currentOption === optionsKey.keyBrand.spaName && (
                          filterOptions.brands.map((brand) => (
-                            <Link href={`/seminuevos?brand=${brand.name.toLowerCase().replace(' ', '+')}`} key={brand.brand_id}>{brand.name}</Link>
+                            <Link href={`/seminuevos?brand=${brand.value.toString().toLowerCase().replace(' ', '+')}`} key={brand.id}>{brand.value}</Link>
                         ))
                     )}
 
                     {currentOption === optionsKey.keyYear.spaName && (
                         filterOptions.years.map((year) => (
-                            <Link href={`/seminuevos?year=${year.year}`} key={year.id}>{year.year}</Link>
+                            <Link href={`/seminuevos?year=${year.value}`} key={year.id}>{year.value}</Link>
                         ))
                     )}
 
                     {currentOption === optionsKey.keyDoors.spaName && (
                         filterOptions.doors.map((door) => (
-                            <Link href={`/seminuevos?doors=${door.doors}`} key={door.id}>{door.doors}</Link>
+                            <Link href={`/seminuevos?doors=${door.value}`} key={door.id}>{door.value}</Link>
                         ))
                     )}
 
                     {currentOption === optionsKey.keyTransmission.spaName && (
                         filterOptions.transmissions.map((transmission) => (
-                            <Link href={`/seminuevos?transmission=${transmission.type}`} className="capitalize" key={transmission.transmission_id}>{transmission.type}</Link>
+                            <Link href={`/seminuevos?transmission=${transmission.value}`} className="capitalize" key={transmission.id}>{transmission.value}</Link>
                         ))
                     )}
                 </div>

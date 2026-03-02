@@ -64,7 +64,7 @@ export default function ModalFilters({ createURL, params, tagsParams }: ModalPro
                 </div>
 
                 <div className="filters p-family">
-                    {/*mainKeyQueryParams.map(key => {
+                    {mainKeyQueryParams.map(key => {
                         const obj: AccordionOptions = {
                             brand: {
                                 bool: brandAccor,
@@ -104,48 +104,25 @@ export default function ModalFilters({ createURL, params, tagsParams }: ModalPro
                                     className={`btn-action ${`test-` + key} pointer ${obj[key].bool ? 'color-1' : 'color-4'}`}
                                     onClick={() => obj[key].set(!obj[key].bool)}
                                 >
-                                    {obj[key].keyUI} <FontAwesomeIcon icon={obj[key].bool? faAngleUp : faAngleDown} className="icon-filter" />
+                                    {obj[key].keyUI} <FontAwesomeIcon icon={obj[key].bool ? faAngleUp : faAngleDown} className="icon-filter" />
                                 </button>
 
                                 {obj[key].bool && (
                                     <div className="options">
                                         {obj[key].options.map(option => (
                                             <button
-                                                className={`capitalize ${getClass(key, option.toString().toLowerCase())}`}
-                                                key={option}
+                                                className={`capitalize ${getClass(key, option.value.toString().toLowerCase())}`}
+                                                key={option.id}
                                                 onClick={(e: React.MouseEvent<HTMLButtonElement>) => btnCreateQuery(e, key)}
                                             >
-                                                {option.toString()}
+                                                {option.value.toString()}
                                             </button>
                                         ))}
                                     </div>
                                 )}
                             </div>
                         )
-                    })*/}
-
-                    {<div className={`accordion-container ${`test-` + 'brand'} border-bottom`} key={'brand'}>
-                        <button
-                            className={`btn-action ${`test-` + 'brand'} pointer ${brandAccor ? 'color-1' : 'color-4'}`}
-                            onClick={() => setBrand(!brandAccor)}
-                        >
-                            {'Marcas'} <FontAwesomeIcon icon={brandAccor ? faAngleUp : faAngleDown} className="icon-filter" />
-                        </button>
-
-                        {brandAccor && (
-                            <div className="options">
-                                {filterOptions.brands.map(option => (
-                                    <button
-                                        className={`capitalize ${getClass('brand', option.name.toString().toLowerCase())}`}
-                                        key={option.brand_id}
-                                        onClick={(e: React.MouseEvent<HTMLButtonElement>) => btnCreateQuery(e, 'brand')}
-                                    >
-                                        {option.name.toString()}
-                                    </button>
-                                ))}
-                            </div>
-                        )}
-                    </div>}
+                    })}
                 </div>
 
                 <button

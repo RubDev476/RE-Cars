@@ -75,43 +75,52 @@ describe('first load / fetchStatus === "completed" / pathname === "/"', () => {
                     filtersOptions: {
                         brands: [
                             {
-                                brand_id: 1,
-                                name: 'chevrolet'
+                                id: 1,
+                                value: 'chevrolet'
                             },
                             {
-                                brand_id: 2,
-                                name: 'audi'
+                                id: 2,
+                                value: 'audi'
                             }
                         ],
                         years: [
                             {
                                 id: 1,
-                                year: 2020
+                                value: 2020
                             },
                             {
                                 id: 1,
-                                year: 2021
+                                value: 2021
                             }
                         ],
                         doors: [
                             {
                                 id: 1,
-                                doors: 2
+                                value: 2
                             },
                             {
                                 id: 1,
-                                doors: 2
+                                value: 2
                             }
                         ],
-                        //colors: ['black', 'blue'],
-                        transmissions: [
+                        colors: [
                             {
-                                transmission_id: 1,
-                                type: 'manual'
+                                id: 1,
+                                value: "black"
                             },
                             {
-                                transmission_id: 2,
-                                type: 'automatico'
+                                id: 1,
+                                value: "blue"
+                            }
+                        ],
+                        transmissions: [
+                            {
+                                id: 1,
+                                value: 'manual'
+                            },
+                            {
+                                id: 2,
+                                value: 'automatico'
                             }
                         ]
                     }

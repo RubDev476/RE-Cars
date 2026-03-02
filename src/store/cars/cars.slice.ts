@@ -10,7 +10,7 @@ export const initialState: InitialState = {
         brands: [],
         doors: [],
         transmissions: [],
-        //colors: [],
+        colors: [],
         years: []
     },
     fetchStatus: 'loading',
@@ -29,8 +29,6 @@ export const carsSlice = createSlice({
     initialState,
     reducers: {
         getFilterOptions: (state, action: PayloadAction<FilterOptions>) => {
-            console.log(action.payload)
-
             if(!action.payload) {
                 state.fetchStatus = 'error';
 
