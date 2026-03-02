@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 import { Car as CarComponent, ModalFilters, Spinner, Error, FiltersHeader } from "@/components";
 import type { TagParam, MainKeyQueryParams, AllKeyQueryParams } from "@/types";
-import { apiUrl, mainKeyQueryParams } from "@/utils/globalVariables";
+import { apiUrl, mainKeyQueryParams, orderOptions } from "@/utils/globalVariables";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faTimes} from '@fortawesome/free-solid-svg-icons';
@@ -47,7 +47,21 @@ export default function PreOwned() {
 
         if(!loadingPage) {    
             if(!order) setUIFiltersAction({key: 'orderOption', value: ''});
-            if(order) setUIFiltersAction({key: 'orderOption', value: order});
+            if(order) {
+                let orderOption = "";
+
+                for(let i = 0; i < orderOptions.length; i++) {
+                    const {slug, option} = orderOptions[i];
+
+                    if(slug === order) {
+                        orderOption = option;
+
+                        break;
+                    }
+                }
+
+                setUIFiltersAction({key: 'orderOption', value: orderOption});
+            }
 
             getCars();
         }
@@ -71,13 +85,13 @@ export default function PreOwned() {
         if (!apiUrl) return;
 
         if (searchParams.toString() === '') {
-            const res = await fetch(apiUrl).then(res => res.json());
+            const res = await fetch(`${apiUrl}/api/cars`).then(res => res.json());
 
-            getCarsAction(res.cars);
+            getCarsAction(res);
         } else {
-            const res = await fetch(apiUrl + '?' + searchParams.toString()).then(res => res.json());
+            const res = await fetch(`${apiUrl}/api/cars` + '?' + searchParams.toString()).then(res => res.json());
 
-            getCarsAction(res.cars);
+            getCarsAction(res);
         }
 
         getTagParams();
@@ -107,7 +121,7 @@ export default function PreOwned() {
     const btnOrder = (e: React.MouseEvent<HTMLButtonElement>) => {
         const t = e.target as HTMLButtonElement;
 
-        setUIFiltersAction({key: 'orderOption', value: t.value});
+        setUIFiltersAction({key: 'orderOption', value: t.textContent});
         setUIFiltersAction({key: 'openOrderOptions', value: false});
 
         createQueryString('order', t.value);
@@ -213,7 +227,7 @@ export default function PreOwned() {
                     {carsStatus === 'succes' && (
                         <div className={`cars-container ${showFilters ? 'grid-filters-actived' : 'grid-filters-disabled'}`}>
                             {cars.map((car) => (
-                                <CarComponent car={car} key={car.id} />
+                                <CarComponent car={car} key={car.car_id} />
                             ))}
                         </div>
                     )}

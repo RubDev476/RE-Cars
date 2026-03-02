@@ -6,7 +6,7 @@ import type { Car as CarTypes } from "@/types";
 
 describe('Car({ car }: { car: CarTypes })', () => {
     const carTest: CarTypes = {
-        id: "29",
+        car_id: "29",
         brand: 'Jeep',
         model: 'Compass',
         year: 2023,
@@ -14,7 +14,7 @@ describe('Car({ car }: { car: CarTypes })', () => {
         doors: 4,
         color: 'gris',
         transmission: 'automatico',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1725550384/Venta%20de%20autos%20-%20Proyecto/wntwdb8takltr48cxyzk.jpg'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1725550384/Venta%20de%20autos%20-%20Proyecto/wntwdb8takltr48cxyzk.jpg'
     }
 
     beforeAll(() => {

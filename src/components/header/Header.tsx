@@ -19,11 +19,11 @@ import {
     faTag,
     faTimes,
 } from '@fortawesome/free-solid-svg-icons';
-import { Car } from "@/types";
 
 import { useCarsActions } from "@/hooks/useCarsActions";
+import { apiUrl } from "@/utils/globalVariables";
 
-export default function Header({ data }: { data: { cars: Car[] } | undefined }) {
+export default function Header() {
     const [openMenu, setOpenMenu] = useState(false); //mobile
     const [usAccordion, setUsAccordion] = useState(false);
     const [helpAccordion, setHelpAccordion] = useState(false);
@@ -43,9 +43,9 @@ export default function Header({ data }: { data: { cars: Car[] } | undefined }) 
 
     async function getFilters() {
         try {
-            //if (!apiUrl) return undefined;
+            if (!apiUrl) return undefined;
 
-            const data = await fetch('http://localhost:3000/api/searchFilters').then(res => res.json());
+            const data = await fetch(`${apiUrl}/api/searchFilters`).then(res => res.json());
 
             getFilterOptionsAction(data);
         } catch (error) {

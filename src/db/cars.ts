@@ -2,7 +2,7 @@ import { Car } from "@/types";
 
 export const CARS_DB: Car[] = [
     {
-        id: "1",
+        car_id: "1",
         brand: 'BMW',
         model: 'Serie 3',
         year: 2020,
@@ -10,10 +10,10 @@ export const CARS_DB: Car[] = [
         doors: 4,
         color: 'Blanco',
         transmission: 'automatico',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696393527/Venta%20de%20autos%20-%20Proyecto/BMW-Serie-2020-4_k06muj.jpg'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696393527/Venta%20de%20autos%20-%20Proyecto/BMW-Serie-2020-4_k06muj.jpg'
     },
     {
-        id: "2",
+        car_id: "2",
         brand: 'Audi',
         model: 'A4',
         year: 2020,
@@ -21,10 +21,10 @@ export const CARS_DB: Car[] = [
         doors: 4,
         color: 'Negro',
         transmission: 'automatico',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696393915/Venta%20de%20autos%20-%20Proyecto/3-5dc5-3263_res2cp.jpg'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696393915/Venta%20de%20autos%20-%20Proyecto/3-5dc5-3263_res2cp.jpg'
     },
     {
-        id: "3",
+        car_id: "3",
         brand: 'Ford',
         model: 'Mustang',
         year: 2015,
@@ -32,10 +32,10 @@ export const CARS_DB: Car[] = [
         doors: 2,
         color: 'Blanco',
         transmission: 'automatico',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696394158/Venta%20de%20autos%20-%20Proyecto/1533731056728_ze2dxs.jpg'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696394158/Venta%20de%20autos%20-%20Proyecto/1533731056728_ze2dxs.jpg'
     },
     {
-        id: "4",
+        car_id: "4",
         brand: 'Audi',
         model: 'A6',
         year: 2020,
@@ -43,10 +43,10 @@ export const CARS_DB: Car[] = [
         doors: 4,
         color: 'Negro',
         transmission: 'automatico',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696394352/Venta%20de%20autos%20-%20Proyecto/z28242415Q_Audi-A6-50-TFSI-e-quattro-S-tronic_pvcx8e.jpg'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696394352/Venta%20de%20autos%20-%20Proyecto/z28242415Q_Audi-A6-50-TFSI-e-quattro-S-tronic_pvcx8e.jpg'
     },
     {
-        id: "5",
+        car_id: "5",
         brand: 'BMW',
         model: 'Serie 5',
         year: 2016,
@@ -54,10 +54,10 @@ export const CARS_DB: Car[] = [
         doors: 4,
         color: 'Rojo',
         transmission: 'automatico',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696394949/Venta%20de%20autos%20-%20Proyecto/t7gjl-f9ymg_wd9qdr.webp'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696394949/Venta%20de%20autos%20-%20Proyecto/t7gjl-f9ymg_wd9qdr.webp'
     },
     {
-        id: "6",
+        car_id: "6",
         brand: 'Mercedes Benz',
         model: 'Clase C',
         year: 2015,
@@ -65,10 +65,10 @@ export const CARS_DB: Car[] = [
         doors: 4,
         color: 'Blanco',
         transmission: 'automatico',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696395084/Venta%20de%20autos%20-%20Proyecto/GAZ_8aa6ce5c52c743049c2cb496b8f728f4_zeyoi9.jpg'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696395084/Venta%20de%20autos%20-%20Proyecto/GAZ_8aa6ce5c52c743049c2cb496b8f728f4_zeyoi9.jpg'
     },
     {
-        id: "7",
+        car_id: "7",
         brand: 'Chevrolet',
         model: 'Camaro',
         year: 2018,
@@ -76,10 +76,10 @@ export const CARS_DB: Car[] = [
         doors: 2,
         color: 'Rojo',
         transmission: 'manual',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696395343/Venta%20de%20autos%20-%20Proyecto/EXTERIOR-frontSidePilotNear-1677795220108_xlmryg.jpg'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696395343/Venta%20de%20autos%20-%20Proyecto/EXTERIOR-frontSidePilotNear-1677795220108_xlmryg.jpg'
     },
     {
-        id: "8",
+        car_id: "8",
         brand: 'Ford',
         model: 'Mustang',
         year: 2019,
@@ -87,10 +87,10 @@ export const CARS_DB: Car[] = [
         doors: 2,
         color: 'Rojo',
         transmission: 'manual',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696395437/Venta%20de%20autos%20-%20Proyecto/450_1000_x9c11b.jpg'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696395437/Venta%20de%20autos%20-%20Proyecto/450_1000_x9c11b.jpg'
     },
     {
-        id: "9",
+        car_id: "9",
         brand: 'Dodge',
         model: 'Challenger',
         year: 2020,
@@ -98,10 +98,10 @@ export const CARS_DB: Car[] = [
         doors: 4,
         color: 'Blanco',
         transmission: 'automatico',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696395518/Venta%20de%20autos%20-%20Proyecto/D_NQ_NP_882118-MLM71558535320_092023-O_uurxha.webp'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696395518/Venta%20de%20autos%20-%20Proyecto/D_NQ_NP_882118-MLM71558535320_092023-O_uurxha.webp'
     },
     {
-        id: "10",
+        car_id: "10",
         brand: 'Audi',
         model: 'A3',
         year: 2017,
@@ -109,10 +109,10 @@ export const CARS_DB: Car[] = [
         doors: 2,
         color: 'Negro',
         transmission: 'manual',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696395626/Venta%20de%20autos%20-%20Proyecto/D_NQ_NP_892037-MLM71080004851_082023-O_rz1q8h.webp'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696395626/Venta%20de%20autos%20-%20Proyecto/D_NQ_NP_892037-MLM71080004851_082023-O_rz1q8h.webp'
     },
     {
-        id: "11",
+        car_id: "11",
         brand: 'Dodge',
         model: 'Challenger',
         year: 2020,
@@ -120,10 +120,10 @@ export const CARS_DB: Car[] = [
         doors: 2,
         color: 'Rojo',
         transmission: 'manual',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696396387/Venta%20de%20autos%20-%20Proyecto/dg020_090clbk1nih9fdssm02bjaiogeg52cr-760x507_h2cy5d.jpg'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696396387/Venta%20de%20autos%20-%20Proyecto/dg020_090clbk1nih9fdssm02bjaiogeg52cr-760x507_h2cy5d.jpg'
     },
     {
-        id: "12",
+        car_id: "12",
         brand: 'Mercedes Benz',
         model: 'Clase C',
         year: 2018,
@@ -131,10 +131,10 @@ export const CARS_DB: Car[] = [
         doors: 4,
         color: 'Azul',
         transmission: 'automatico',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696396454/Venta%20de%20autos%20-%20Proyecto/Mercedes-Clase-C-2018-1-830x460_lvzkxq.jpg'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696396454/Venta%20de%20autos%20-%20Proyecto/Mercedes-Clase-C-2018-1-830x460_lvzkxq.jpg'
     },
     {
-        id: "13",
+        car_id: "13",
         brand: 'BMW',
         model: 'Serie 5',
         year: 2019,
@@ -142,10 +142,10 @@ export const CARS_DB: Car[] = [
         doors: 4,
         color: 'Blanco',
         transmission: 'automatico',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1717428518/Venta%20de%20autos%20-%20Proyecto/bmw-serie-5-479c_f2nuuc_ubycxf.jpg'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1717428518/Venta%20de%20autos%20-%20Proyecto/bmw-serie-5-479c_f2nuuc_ubycxf.jpg'
     },
     {
-        id: "14",
+        car_id: "14",
         brand: 'Ford',
         model: 'Mustang',
         year: 2017,
@@ -153,10 +153,10 @@ export const CARS_DB: Car[] = [
         doors: 2,
         color: 'Negro',
         transmission: 'manual',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696396674/Venta%20de%20autos%20-%20Proyecto/HD-wallpaper-ford-mustang-sports-cars-black-mustang-tuning-forgeline-gs1r-ford_ksmcxe.jpg'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696396674/Venta%20de%20autos%20-%20Proyecto/HD-wallpaper-ford-mustang-sports-cars-black-mustang-tuning-forgeline-gs1r-ford_ksmcxe.jpg'
     },
     {
-        id: "15",
+        car_id: "15",
         brand: 'Dodge',
         model: 'Challenger',
         year: 2015,
@@ -164,10 +164,10 @@ export const CARS_DB: Car[] = [
         doors: 2,
         color: 'Azul',
         transmission: 'automatico',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696396744/Venta%20de%20autos%20-%20Proyecto/desktop-wallpaper-dodge-challenger-_-for-ultra-tv_megtve.jpg'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696396744/Venta%20de%20autos%20-%20Proyecto/desktop-wallpaper-dodge-challenger-_-for-ultra-tv_megtve.jpg'
     },
     {
-        id: "16",
+        car_id: "16",
         brand: 'BMW',
         model: 'Serie 3',
         year: 2018,
@@ -175,10 +175,10 @@ export const CARS_DB: Car[] = [
         doors: 4,
         color: 'Blanco',
         transmission: 'automatico',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696396800/Venta%20de%20autos%20-%20Proyecto/serie-3-bmw-318i-sport-line-2018-exterior-frontsidepilotnear-16268048837496_hsa7qm.jpg'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696396800/Venta%20de%20autos%20-%20Proyecto/serie-3-bmw-318i-sport-line-2018-exterior-frontsidepilotnear-16268048837496_hsa7qm.jpg'
     },
     {
-        id: "17",
+        car_id: "17",
         brand: 'BMW',
         model: 'Serie 5',
         year: 2017,
@@ -186,10 +186,10 @@ export const CARS_DB: Car[] = [
         doors: 4,
         color: 'Negro',
         transmission: 'automatico',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696396883/Venta%20de%20autos%20-%20Proyecto/bmw-serie-5-dark-shadow-edition-1609432185_gxotn7.jpg'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696396883/Venta%20de%20autos%20-%20Proyecto/bmw-serie-5-dark-shadow-edition-1609432185_gxotn7.jpg'
     },
     {
-        id: "18",
+        car_id: "18",
         brand: 'Mercedes Benz',
         model: 'Clase C',
         year: 2018,
@@ -197,10 +197,10 @@ export const CARS_DB: Car[] = [
         doors: 4,
         color: 'Blanco',
         transmission: 'automatico',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696396952/Venta%20de%20autos%20-%20Proyecto/EXTERIOR-frontSidePilotNear-1662576244725_bglkjq.jpg'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696396952/Venta%20de%20autos%20-%20Proyecto/EXTERIOR-frontSidePilotNear-1662576244725_bglkjq.jpg'
     },
     {
-        id: "19",
+        car_id: "19",
         brand: 'Audi',
         model: 'A4',
         year: 2016,
@@ -208,10 +208,10 @@ export const CARS_DB: Car[] = [
         doors: 4,
         color: 'Azul',
         transmission: 'automatico',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696397043/Venta%20de%20autos%20-%20Proyecto/HD-wallpaper-2016-audi-a4-2-tfsi-quattro-ara-blue-crystal-effect-front-car_txikm7.jpg'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1696397043/Venta%20de%20autos%20-%20Proyecto/HD-wallpaper-2016-audi-a4-2-tfsi-quattro-ara-blue-crystal-effect-front-car_txikm7.jpg'
     },
     {
-        id: "20",
+        car_id: "20",
         brand: 'Nissan',
         model: 'Versa',
         year: 2021,
@@ -219,10 +219,10 @@ export const CARS_DB: Car[] = [
         doors: 4,
         color: 'naranja',
         transmission: 'automatico',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1725547908/Venta%20de%20autos%20-%20Proyecto/xyksfauhcrhc0jxctwsn.webp'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1725547908/Venta%20de%20autos%20-%20Proyecto/xyksfauhcrhc0jxctwsn.webp'
     },
     {
-        id: "21",
+        car_id: "21",
         brand: 'Ford',
         model: 'Ranger',
         year: 2021,
@@ -230,10 +230,10 @@ export const CARS_DB: Car[] = [
         doors: 4,
         color: 'negro',
         transmission: 'manual',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1725548330/Venta%20de%20autos%20-%20Proyecto/cbyhk6oyx1t328p1abzy.jpg'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1725548330/Venta%20de%20autos%20-%20Proyecto/cbyhk6oyx1t328p1abzy.jpg'
     },
     {
-        id: "22",
+        car_id: "22",
         brand: 'Ford',
         model: 'Mustang',
         year: 2021,
@@ -241,10 +241,10 @@ export const CARS_DB: Car[] = [
         doors: 2,
         color: 'azul',
         transmission: 'manual',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1725548715/Venta%20de%20autos%20-%20Proyecto/g46gnasxunitmg5mrhw4.jpg'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1725548715/Venta%20de%20autos%20-%20Proyecto/g46gnasxunitmg5mrhw4.jpg'
     },
     {
-        id: "23",
+        car_id: "23",
         brand: 'Lincoln',
         model: 'Corsair',
         year: 2021,
@@ -252,10 +252,10 @@ export const CARS_DB: Car[] = [
         doors: 4,
         color: 'blanco',
         transmission: 'automatico',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1725548908/Venta%20de%20autos%20-%20Proyecto/grjtjhe1wshvbe1luajv.webp'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1725548908/Venta%20de%20autos%20-%20Proyecto/grjtjhe1wshvbe1luajv.webp'
     },
     {
-        id: "24",
+        car_id: "24",
         brand: 'Nissan',
         model: 'X-Trail',
         year: 2022,
@@ -263,10 +263,10 @@ export const CARS_DB: Car[] = [
         doors: 4,
         color: 'beige',
         transmission: 'automatico',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1725549232/Venta%20de%20autos%20-%20Proyecto/qiv3nxh03xequcjygabu.jpg'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1725549232/Venta%20de%20autos%20-%20Proyecto/qiv3nxh03xequcjygabu.jpg'
     },
     {
-        id: "25",
+        car_id: "25",
         brand: 'Chevrolet',
         model: 'Groove',
         year: 2022,
@@ -274,10 +274,10 @@ export const CARS_DB: Car[] = [
         doors: 4,
         color: 'rojo',
         transmission: 'automatico',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1725549393/Venta%20de%20autos%20-%20Proyecto/tyx2f8dl2zoeplftchmj.jpg'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1725549393/Venta%20de%20autos%20-%20Proyecto/tyx2f8dl2zoeplftchmj.jpg'
     },
     {
-        id: "26",
+        car_id: "26",
         brand: 'Chevrolet',
         model: 'Aveo',
         year: 2022,
@@ -285,10 +285,10 @@ export const CARS_DB: Car[] = [
         doors: 4,
         color: 'gris',
         transmission: 'manual',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1725549618/Venta%20de%20autos%20-%20Proyecto/h4gxqvhhge9kw3fkyozg.webp'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1725549618/Venta%20de%20autos%20-%20Proyecto/h4gxqvhhge9kw3fkyozg.webp'
     },
     {
-        id: "27",
+        car_id: "27",
         brand: 'Mazda',
         model: 'Mx-5',
         year: 2022,
@@ -296,10 +296,10 @@ export const CARS_DB: Car[] = [
         doors: 2,
         color: 'blanco',
         transmission: 'manual',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1725549770/Venta%20de%20autos%20-%20Proyecto/uuuncwbbfufou23c8qjf.jpg'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1725549770/Venta%20de%20autos%20-%20Proyecto/uuuncwbbfufou23c8qjf.jpg'
     },
     {
-        id: "28",
+        car_id: "28",
         brand: 'Dodge',
         model: 'Attitude',
         year: 2023,
@@ -307,10 +307,10 @@ export const CARS_DB: Car[] = [
         doors: 4,
         color: 'red',
         transmission: 'automatico',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1725550079/Venta%20de%20autos%20-%20Proyecto/x2jyxnus9zzv3cqroqew.webp'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1725550079/Venta%20de%20autos%20-%20Proyecto/x2jyxnus9zzv3cqroqew.webp'
     },
     {
-        id: "29",
+        car_id: "29",
         brand: 'Jeep',
         model: 'Compass',
         year: 2023,
@@ -318,6 +318,6 @@ export const CARS_DB: Car[] = [
         doors: 4,
         color: 'gris',
         transmission: 'automatico',
-        urlImage: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1725550384/Venta%20de%20autos%20-%20Proyecto/wntwdb8takltr48cxyzk.jpg'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1725550384/Venta%20de%20autos%20-%20Proyecto/wntwdb8takltr48cxyzk.jpg'
     }
 ]

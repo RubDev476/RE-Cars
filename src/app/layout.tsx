@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 
-import { Car } from "@/types";
-import { apiUrl } from "@/utils/globalVariables";
-
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -23,30 +20,16 @@ export const metadata: Metadata = {
     description: "Autos usados, o seminuevos a los mejores precios",
 };
 
-async function getCars() {
-    try {
-        if (!apiUrl) return undefined;
-
-        const data: {cars: Car[]} = await fetch(apiUrl).then(res => res.json());
-
-        return data;
-    } catch (error) {
-        return undefined;
-    }
-}
-
 export default async function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    const res = await getCars();
-
     return (
         <html lang="en">
             <body>
                 <Providers>
-                    <Header data={res} />
+                    <Header />
 
                     {children}
                     

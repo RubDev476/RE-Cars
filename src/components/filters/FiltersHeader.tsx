@@ -32,7 +32,7 @@ export default function FiltersHeader({resetFilters, btnOrder}: FiltersHeaderPro
 
                     {openOrderOptions && (
                         <div className="options-container-preowned">
-                            {orderOptions.map((option: string) => <button key={option} value={option} onClick={btnOrder} className="pointer">{option}</button>)}
+                            {orderOptions.map(({option, slug}) => <button key={slug} value={slug} onClick={btnOrder} className="pointer">{option}</button>)}
                         </div>
                     )}
                 </div>

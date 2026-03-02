@@ -15,9 +15,13 @@ SELECT
     c.doors,
     t.type as transmission,
     c.img_url,
-    c.price
+    c.price,
+    col.Name AS color, 
+    f.description AS finish_color
 FROM cars c
 LEFT JOIN transmissions t ON c.transmission_id = t.transmission_id
+LEFT JOIN colors col ON c.Color_ID = col.Color_ID
+LEFT JOIN color_finishes f ON c.Finish_ID = f.Finish_ID
 LEFT JOIN brands b ON c.brand_id = b.brand_id;
 
 CREATE VIEW getYears AS
@@ -52,7 +56,7 @@ CREATE PROCEDURE filter_cars (
     IN order_types VARCHAR(20)       -- 'price_asc','price_desc','year_asc','year_desc'
 )
 BEGIN
-    SET @sql = 'SELECT c.*, b.Name AS Brand, col.Name AS Color, f.description AS Finish, t.type AS Transmission
+    SET @sql = 'SELECT c.car_id, c.model, c.year, c.doors, c.img_url, c.price, b.Name AS brand, col.Name AS color, f.description AS finish_color, t.type AS transmission
                 FROM cars c
                 JOIN brands b ON c.Brand_ID = b.Brand_ID
                 JOIN colors col ON c.Color_ID = col.Color_ID

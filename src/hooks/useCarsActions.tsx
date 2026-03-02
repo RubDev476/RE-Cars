@@ -10,7 +10,6 @@ export const useCarsActions = () => {
     const dispatch = useAppDispatch();
 
     const getCarsAction = (cars: Car[] | undefined) => dispatch(getCars(cars));
-    //const getFilterOptionsAction = (cars: Car[] | undefined) => dispatch(getFilterOptions(cars));
     const getFilterOptionsAction = (filters: FilterOptions) => dispatch(getFilterOptions(filters));
     const setFetchStatusAction = (status: FetchStatus) => dispatch(setFetchStatus(status));
     const setKeywordsParamsAction = (params: string) => dispatch(setKeywordsParams(params));

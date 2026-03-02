@@ -1,60 +1,60 @@
 import { NextRequest } from "next/server";
-
-import { CARS_DB } from "@/db/cars";
-import { mainKeyQueryParams } from "@/utils/globalVariables";
-import { orderF } from "@/store/utilities";
-
-import type { Car, MainKeyQueryParams } from "@/types";
 //import { NextResponse } from "next/server";
 
 import { dbConnection } from "@/db/db";
 
 export const revalidate = 60;
 
-/*export async function GET(request: NextRequest) {
+export async function GET(request: NextRequest) {
     const searchParams = request.nextUrl.searchParams;
 
-    if (searchParams.toString() === '') return Response.json({ cars: CARS_DB });
+    const brandParams = searchParams.get('brand');
+    const yearParams = searchParams.get('year');
+    const doorsParams = searchParams.get('doors');
+    const transmissionParams = searchParams.get('transmission');
+    const colorParams = searchParams.get('color');
 
     const keywords = searchParams.get('keywords');
     const order = searchParams.get('order');
 
-    let allFilters = [...CARS_DB];
-
     if (keywords) {
         const extract = keywords.split('-');
 
-        let preFilter: Set<Car> = new Set([]);
-
-        //to access the car properties without validating
-        type CarProperties = MainKeyQueryParams | 'model';
-        const carProperties: CarProperties[] = [...mainKeyQueryParams, 'model'];
-
-        extract.forEach(e => {
-            allFilters.forEach(car => {
-                if (carProperties.some(prop => car[prop].toString().toLowerCase().includes(e.toLowerCase()))) preFilter.add(car);
-            });
-        });
-
-        allFilters = [...preFilter];
+        console.log(extract)
     }
 
-    mainKeyQueryParams.forEach((key: MainKeyQueryParams) => {
-        const values = searchParams.get(key);
-    
-        if (values) {
-            const paramValues = values.split('-');
+    let brandValues = brandParams?.replaceAll('-', ',');
+    let brandIds = "";
 
-            allFilters = allFilters.filter(car => paramValues.includes(car[key].toString().toLowerCase()));
-        }
-    });
+    let transmissionValues = transmissionParams?.replaceAll('-', ',');
+    let transmissionIds = "";
 
-    if (order) allFilters = orderF(allFilters, order);
+    let colorValues = colorParams?.replaceAll('-', ',');
+    let colorIds = "";
 
-    return Response.json({ cars: allFilters });
-}*/
+    const doorsValues = doorsParams?.replaceAll('-', ',');
+    const yearsValues = yearParams?.replaceAll('-', ',');
 
-export async function GET() {
-  const [rows] = await dbConnection.query('SELECT * FROM cars');
-  return Response.json(rows);
+    if (brandValues) {
+        const [rows]: any = await dbConnection.query(`SELECT brand_id AS id FROM brands WHERE FIND_IN_SET(LOWER(Name), LOWER('${brandValues}'));`);
+
+        //rows: [ { id: 2 }, { id: 5 }, { id: 3 }, { id: 4 } ]
+        brandIds = rows.map((r: any) => r.id).join(",");
+    }
+
+    if (transmissionValues) {
+        const [rows]: any = await dbConnection.query(`SELECT transmission_id AS id FROM transmissions WHERE FIND_IN_SET(LOWER(type), LOWER('${transmissionValues}'));`);
+
+        transmissionIds = rows.map((r: any) => r.id).join(",");
+    }
+
+    if (colorValues) {
+        const [rows]: any = await dbConnection.query(`SELECT color_id AS id FROM colors WHERE FIND_IN_SET(LOWER(name), LOWER('${colorValues}'));`);
+
+        colorIds = rows.map((r: any) => r.id).join(",");
+    }
+
+    const [rows]: any = await dbConnection.query(`call filter_cars("${colorIds}", "${brandIds}", "${doorsValues ?? ""}", "",  "${transmissionIds}", "${yearsValues ?? ""}", "${order ?? ""}")`);
+
+    return Response.json(rows[0]);
 }

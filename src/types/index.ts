@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 
 export type Car = {
-    id: string;
+    car_id: string;
     brand: string;
     model: string;
     year: number;
@@ -9,7 +9,8 @@ export type Car = {
     doors: number;
     color: string;
     transmission: string;
-    urlImage: string;
+    img_url: string;
+    finish_color: string;
 }
 
 export type MainKeyQueryParams = 'brand' | 'year' | 'doors' | 'transmission' | 'color';

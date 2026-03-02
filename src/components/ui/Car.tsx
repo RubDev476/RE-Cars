@@ -5,12 +5,12 @@ import Image from "next/image";
 import { Car as CarTypes } from "@/types";
 
 export default function Car({ car }: { car: CarTypes }) {
-    const { brand, model, doors, year, transmission, urlImage, price } = car;
+    const { brand, model, doors, year, transmission, img_url, price } = car;
 
     return (
         <div className="car pointer" role="article">
             <div className="img-container">
-                <Image src={urlImage} alt="car" width={600} height={310} priority />
+                <Image src={img_url} alt="car" width={600} height={310} priority />
             </div>
 
             <div className="car-info">

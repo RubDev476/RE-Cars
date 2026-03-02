@@ -25,7 +25,12 @@ export const headquarters = [
 ]
 
 //filtersheader component
-export const orderOptions = ['Mayor precio', 'Menor precio', 'Más antiguos', 'Más recientes'];
+export const orderOptions = [
+    {option: "Mayor precio", slug: "price_desc"}, 
+    {option: "Menor precio", slug: "price_asc"}, 
+    {option: "Más antiguos", slug: "year_asc"},
+    {option: "Más recientes", slug: "year_desc"}
+];
 
 //foooter component
 export const socialIcons = ['facebook', 'instagram', 'youtube', 'twitter', 'pinterest', 'linkedin', 'tiktok'];
