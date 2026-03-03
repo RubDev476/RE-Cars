@@ -8,3 +8,7 @@ redux:
     - aislar cada componente de servidor para no depender de un status fetch global
 
 tests:
+
+
+pendientes:
+    -buscador por palabras claves

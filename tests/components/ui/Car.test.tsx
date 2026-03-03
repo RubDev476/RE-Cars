@@ -14,7 +14,8 @@ describe('Car({ car }: { car: CarTypes })', () => {
         doors: 4,
         color: 'gris',
         transmission: 'automatico',
-        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1725550384/Venta%20de%20autos%20-%20Proyecto/wntwdb8takltr48cxyzk.jpg'
+        img_url: 'https://res.cloudinary.com/dkav9fvlo/image/upload/v1725550384/Venta%20de%20autos%20-%20Proyecto/wntwdb8takltr48cxyzk.jpg',
+        finish_color: ""
     }
 
     beforeAll(() => {

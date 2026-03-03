@@ -5,7 +5,6 @@ import userEvent from '@testing-library/user-event';
 
 import { renderWithProviders } from '../../setUp';
 import { Header } from '@/components';
-import { CARS_DB } from '@/db/cars';
 import { SearchFiltersCont } from "@/components";
 
 import * as nextNavigation from 'next/navigation';
@@ -130,7 +129,7 @@ beforeAll(() => {
 
 describe('first load rendering', () => {
     beforeAll(() => {
-        renderWithProviders(<Header data={{cars: CARS_DB}} />);
+        renderWithProviders(<Header />);
     })
 
     afterAll(() => {
@@ -185,7 +184,7 @@ describe('first load rendering', () => {
 
 describe('"openMenu" state', () => {
     beforeAll(() => {
-        renderWithProviders(<Header data={{cars: CARS_DB}} />);
+        renderWithProviders(<Header />);
     })
 
     afterAll(() => {
@@ -218,7 +217,7 @@ describe('"openMenu" state', () => {
 
 describe('accordions ("usAccordion" and "helpAccordion" states)', () => {
     beforeAll(() => {
-        renderWithProviders(<Header data={{cars: CARS_DB}} />);
+        renderWithProviders(<Header />);
     })
 
     afterAll(() => {
@@ -276,7 +275,7 @@ describe('accordions ("usAccordion" and "helpAccordion" states)', () => {
 
 describe('resize event', () => {
     beforeAll(() => {
-        renderWithProviders(<Header data={{cars: CARS_DB}} />);
+        renderWithProviders(<Header />);
     })
 
     afterAll(() => {
@@ -326,7 +325,7 @@ describe('pathname / first load', () => {
     })
 
     const expect_nav = (pathname: '/' | '/seminuevos') => {
-        renderWithProviders(<Header data={{cars: CARS_DB}} />);
+        renderWithProviders(<Header />);
 
         const navElement = screen.getByRole('navigation');
         
