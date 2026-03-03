@@ -11,4 +11,5 @@ tests:
 
 
 pendientes:
-    -buscador por palabras claves
+    - buscador por palabras claves
+    - variables de entorno para la conexion a la db 
