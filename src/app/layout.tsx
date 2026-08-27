@@ -25,6 +25,7 @@ export const metadata: Metadata = {
 
 async function getCars() {
     try {
+        console.log(apiUrl)
         if (!apiUrl) return undefined;
 
         const data: {cars: Car[]} = await fetch(apiUrl).then(res => res.json());

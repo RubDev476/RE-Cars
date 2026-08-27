@@ -1,4 +1,4 @@
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 import { CARS_DB } from "@/db/cars";
 import { mainKeyQueryParams } from "@/utils/globalVariables";
@@ -49,5 +49,5 @@ export async function GET(request: NextRequest) {
 
     if (order) allFilters = orderF(allFilters, order);
 
-    return Response.json({ cars: allFilters });
+    return NextResponse.json({ cars: allFilters });
 }
