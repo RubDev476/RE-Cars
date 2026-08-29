@@ -12,7 +12,7 @@ export const revalidate = 60;
 export async function GET(request: NextRequest) {
     const searchParams = request.nextUrl.searchParams;
 
-    if (searchParams.toString() === '') return Response.json({ cars: CARS_DB });
+    if (searchParams.toString() === '') return NextResponse.json({ cars: CARS_DB });
 
     const keywords = searchParams.get('keywords');
     const order = searchParams.get('order');
